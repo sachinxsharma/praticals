@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Download</title>
+    <style>
+        button{
+            display: center;
+            background-color: antiquewhite;
+        
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="downloadPDF()">Download PDF</button>
+
+<script>
+function downloadPDF() {
+    var pdfURL = 'example.pdf';
+    // Creating a hidden anchor element
+    var link = document.createElement('a');
+    link.href = pdfURL;
+
+    link.download = 'example.pdf';
+
+    // Triggering the click event on the anchor element
+    document.body.appendChild(link);
+    link.click();
+
+    // Removing the anchor element from the DOM
+    document.body.removeChild(link);
+}
+</script>
+
+</body>
+</html>
